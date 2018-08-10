@@ -22,12 +22,12 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 var cors_proxy = require('./lib/cors-anywhere').createServer({
   originBlacklist: originBlacklist,
   originWhitelist: [
-    'http://kuponuna3.com',
-    'https://kuponuna3.com',
-    'http://mobil.kuponuna3.com',
-    'https://mobil.kuponuna3.com',
-    'http://tv.kuponuna3.com',
-    'https://tv.kuponuna3.com',    
+    'http://kuponuna4.com',
+    'https://kuponuna4.com',
+    'http://mobil.kuponuna4.com',
+    'https://mobil.kuponuna4.com',
+    'http://tv.kuponuna4.com',
+    'https://tv.kuponuna4.com',    
     'http://canlitribun.com',
     'https://canlitribun.com',
     'http://mobil.canlitribun.com',
