@@ -28,12 +28,12 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
     'https://mobil.kuponuna101.com',
     'http://tv.kuponuna101.com',
     'https://tv.kuponuna101.com',    
-    'http://canlitribun.com',
-    'https://canlitribun.com',
-    'http://mobil.canlitribun.com',
-    'https://mobil.canlitribun.com',
-    'http://tv.canlitribun.com',
-    'https://tv.canlitribun.com'
+    'http://canlitribun1.com',
+    'https://canlitribun1.com',
+    'http://mobil.canlitribun1.com',
+    'https://mobil.canlitribun1.com',
+    'http://tv.canlitribun1.com',
+    'https://tv.canlitribun1.com'
   ],
   requireHeader: ['origin', 'x-requested-with'],
   checkRateLimit: checkRateLimit,
