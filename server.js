@@ -36,6 +36,7 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
   removeHeaders: [
     'cookie',
     'cookie2',
+    'referer',
     // Strip Heroku-specific headers
     'x-heroku-queue-wait-time',
     'x-heroku-queue-depth',
