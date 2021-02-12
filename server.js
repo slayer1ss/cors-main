@@ -21,17 +21,8 @@ var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELI
 
 var cors_proxy = require('./lib/cors-anywhere').createServer({
   originBlacklist: originBlacklist,
-  originWhitelist: [
-    'http://kuponuna105.com','https://kuponuna105.com',
-    'http://www.kuponuna105.com','https://www.kuponuna105.com',
-    'http://mobil.kuponuna105.com','https://mobil.kuponuna105.com',
-    'http://tv.kuponuna105.com','https://tv.kuponuna105.com',    
-    'http://canlitribun5.com','https://canlitribun5.com',
-    'http://www.canlitribun5.com','https://www.canlitribun5.com',
-    'http://mobil.canlitribun5.com','https://mobil.canlitribun5.com',
-    'http://tv.canlitribun5.com','https://tv.canlitribun5.com'
-  ],
-  requireHeader: ['origin', 'x-requested-with'],
+  originWhitelist: [],
+  requireHeader: [],
   checkRateLimit: checkRateLimit,
   removeHeaders: [
     'cookie',
