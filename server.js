@@ -32,6 +32,7 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
   setHeaders:{    
 
   },  
+  maxRedirects: 0,  
   removeHeaders: [
     'cookie',
     'cookie2',
