@@ -30,10 +30,8 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
   ],
   requireHeader: [],
   checkRateLimit: checkRateLimit,
-  setHeaders:{
-     #"Referer": "http://liveonscore.tv"
-    
-     #"Origin": null
+  setHeaders:{    
+     "Origin": null
   },  
   removeHeaders: [
     'cookie',
