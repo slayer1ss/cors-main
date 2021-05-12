@@ -25,15 +25,12 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
      'https://www.canlitribun14.com','https://www.canlitribun15.com','https://www.canlitribun16.com','https://www.canlitribun17.com',
      'https://www.canlitribun18.com','https://www.canlitribun19.com','https://www.canlitribun20.com','https://www.kuponuna110.com',
      'https://www.kuponuna111.com','https://www.kuponuna112.com','https://www.kuponuna113.com','https://www.kuponuna114.com','https://www.kuponuna115.com',
-     'https://www.kuponuna116.com','https://www.kuponuna117.com','https://www.kuponuna118.com','https://www.kuponuna119.com','https://www.kuponuna120.com',
-     '91.209.70.61'
+     'https://www.kuponuna116.com','https://www.kuponuna117.com','https://www.kuponuna118.com','https://www.kuponuna119.com','https://www.kuponuna120.com'
   ],
   requireHeader: [],
   checkRateLimit: checkRateLimit,
   setHeaders:{    
-     "Origin": "https://lite-1x287006.com",    
-     "USER-AGENT": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0",
-     "X-Forwarded-For":"213.254.153.54"
+
   },  
   removeHeaders: [
     'cookie',
@@ -48,7 +45,7 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
   redirectSameOrigin: true,
   httpProxyOptions: {
     // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
-    xfwd: true,
+    xfwd: false,
   },
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
