@@ -19,7 +19,8 @@ function parseEnvList(env) {
 // Set up rate-limiting to avoid abuse of the public CORS Anywhere server.
 var checkRateLimit = require('./lib/rate-limit')(process.env.CORSANYWHERE_RATELIMIT);
 
-var cors_proxy = require('./lib/cors-anywhere').createServer({
+var cors_proxy = require('./lib/cors-anywhere');
+cors_proxy.createServer({
   originBlacklist: originBlacklist,
   originWhitelist: [
      'https://www.canlitribun14.com','https://www.canlitribun15.com','https://www.canlitribun16.com','https://www.canlitribun17.com',
@@ -32,7 +33,7 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
   setHeaders:{    
     "Referer": ""
   },  
-  maxRedirects: 5,  
+  maxRedirects: 5,
   removeHeaders: [
     'cookie',
     'cookie2',
@@ -42,6 +43,14 @@ var cors_proxy = require('./lib/cors-anywhere').createServer({
     'x-heroku-queue-depth',
     'x-heroku-dynos-in-use',
     'x-request-start',
+    'x-request-id',
+    'via',
+    'connect-time',
+    'total-route-time',
+    // Other Heroku added debug headers
+    // 'x-forwarded-for',
+    // 'x-forwarded-proto',
+    // 'x-forwarded-port',
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
