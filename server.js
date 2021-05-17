@@ -9,10 +9,9 @@ cors_proxy.createServer({
   originWhitelist: [],
   requireHeader: [],
   checkRateLimit: null,
-  setHeaders:{    
+  setHeaders:{
     "Referer": ""
-  },  
-  maxRedirects: 5,
+  },
   removeHeaders: [
     'cookie',
     'cookie2',
