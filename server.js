@@ -1,12 +1,6 @@
-// Listen on a specific host via the HOST environment variable
 var host = process.env.HOST || '0.0.0.0';
-// Listen on a specific port via the PORT environment variable
 var port = process.env.PORT || 8080;
 
-// Grab the blacklist from the command-line so that we can update the blacklist without deploying
-// again. CORS Anywhere is open by design, and this blacklist is not used, except for countering
-// immediate abuse (e.g. denial of service). If you want to block all origins except for some,
-// use originWhitelist instead.
 var originBlacklist = parseEnvList(process.env.CORSANYWHERE_BLACKLIST);
 var originWhitelist = parseEnvList(process.env.CORSANYWHERE_WHITELIST);
 function parseEnvList(env) {
@@ -33,7 +27,6 @@ cors_proxy.createServer({
     'cookie',
     'cookie2',
     'referer',
-    // Strip Heroku-specific headers
     'x-heroku-queue-wait-time',
     'x-heroku-queue-depth',
     'x-heroku-dynos-in-use',
@@ -42,14 +35,9 @@ cors_proxy.createServer({
     'via',
     'connect-time',
     'total-route-time',
-    // Other Heroku added debug headers
-    // 'x-forwarded-for',
-    // 'x-forwarded-proto',
-    // 'x-forwarded-port',
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
-    // Do not add X-Forwarded-For, etc. headers, because Heroku already adds it.
     xfwd: false,
   },
 }).listen(port, host, function() {
@@ -58,10 +46,5 @@ cors_proxy.createServer({
 
 var fs = require('fs');
 require('http').createServer(function(req, res) {
-  if (req.url === '/crossdomain.xml') {
-    fs.createReadStream('crossdomain.xml').pipe(res);
-    return;
-  }
-  // Let the server handle it
-  cors_proxy.emit('request', req, res);
-}).listen(8080); // Listen on port 8080.
+  if (req.url === '/crossdomain.xml') {fs.createReadStream('crossdomain.xml').pipe(res);return;}cors_proxy.emit('request', req, res);
+}).listen(8080);
