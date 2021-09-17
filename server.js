@@ -32,3 +32,13 @@ cors_proxy.createServer({
 }).listen(port, host, function() {
   console.log('Running CORS Anywhere on ' + host + ':' + port);
 });
+
+var fs = require('fs');
+require('http').createServer(function(req, res) {
+  var reqpath="";
+  if (req.url === '/AssetsLive/assets/js/TvPlay.js') {reqpath="/AssetsLive/assets/js/TvPlay.js";}
+  else if (req.url === '/AssetsLive/assets/js/tvxlive.js') {reqpath="/AssetsLive/assets/js/tvxlive.js";}
+  else if (req.url === '/AssetsLive/assets/js/tvxlive-init.js') {reqpath="/AssetsLive/assets/js/tvxlive-init.js";}
+  
+  if (reqpath!="") {fs.createReadStream(reqpath).pipe(res);return;}cors_proxy.emit('request', req, res);
+}).listen(8080);
