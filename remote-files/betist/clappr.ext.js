@@ -1,8 +1,3 @@
-
-if (top.location == self.location) {
-    top.location = "/";
-}
-
 (function($) {
 
     $(window.document).ready(function() {
