@@ -1,0 +1,215 @@
+.scrtabs-tab-container * {
+    box-sizing: border-box;
+}
+
+.scrtabs-tab-container {
+    height: 42px;
+}
+
+    .scrtabs-tab-container .tab-content {
+        clear: left;
+    }
+
+    .scrtabs-tab-container.scrtabs-bootstrap4 .scrtabs-tabs-movable-container > .navbar-nav {
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+.scrtabs-tabs-fixed-container {
+    float: left;
+    height: 42px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.scrtabs-tabs-movable-container {
+    position: relative;
+}
+
+    .scrtabs-tabs-movable-container .tab-content {
+        display: none;
+    }
+
+.scrtabs-tab-container.scrtabs-rtl .scrtabs-tabs-movable-container > ul.nav-tabs {
+    padding-right: 0;
+}
+
+.scrtabs-tab-scroll-arrow {
+    /*border: 1px solid #dddddd;*/
+    /*border-top: none;*/
+    color: #428bca;
+    display: none;
+    float: left;
+    font-size: 20px;
+    height: 42px;
+    margin-bottom: -1px;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 30px;
+}
+
+    .scrtabs-tab-scroll-arrow:hover {
+        background-color: #eeeeee;
+    }
+
+    .scrtabs-tab-scroll-arrow,
+    .scrtabs-tab-scroll-arrow .scrtabs-click-target {
+        cursor: pointer;
+    }
+
+        .scrtabs-tab-scroll-arrow.scrtabs-with-click-target {
+            cursor: default;
+        }
+
+        .scrtabs-tab-scroll-arrow.scrtabs-disable,
+        .scrtabs-tab-scroll-arrow.scrtabs-disable .scrtabs-click-target {
+            color: #ddd;
+            cursor: default;
+        }
+
+            .scrtabs-tab-scroll-arrow.scrtabs-disable:hover {
+                background-color: initial;
+            }
+
+.scrtabs-tabs-fixed-container ul.nav-tabs > li {
+    white-space: nowrap;
+}
+
+.h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    text-transform:none;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+}
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.newsbar {
+    /*background: #001c35;*/
+    display: flex;
+    /*padding: 10px;*/
+    align-items: center;
+    /*margin-top: 10px*/
+}
+
+.newsbartitle {
+    flex: 1 0 auto;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    border-right: 1px solid #aeaeae;
+    padding-right: 10px
+}
+.newscontainer {
+    margin-left: 10px;
+    overflow: hidden;
+    position: relative;
+    top: 3px
+}
+
+    .newscontainer ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap
+    }
+
+        .newscontainer ul li {
+            display: inline-block;
+            margin: 0 10px
+        }
+
+            .newscontainer ul li:first-child {
+                margin-left: 0;
+                padding-left: 0
+            }
+
+            .newscontainer ul li a {
+                display: block;
+                padding: 0 5px;
+                font-size: 13px;
+                font-weight: 400;
+                color: #838f9a
+            }
+
+                .newscontainer ul li a:hover {
+                    color: #fff
+                }
+.breaking-news-ticker {
+    display: block;
+    border: solid 1px #ce2525;
+    height: 25px;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 40px;
+    overflow: hidden;
+    border-radius: 2px;
+    text-align: auto;
+    font-size: 14px;
+}
+
+
+@media (min-width: 200px) {
+    .breaking-news-ticker {
+        width: 100%;
+    }
+}
+/*@media (min-width: 400px) {
+    .breaking-news-ticker {
+        width: 500px;
+    }
+}*/
+@media (min-width: 950px) {
+    .breaking-news-ticker {
+        width: 800px;
+    }
+}
+.mobile-navbar-zindex {
+    z-index: 2;
+}
+.playerframe{
+    height:500px;
+}
+.playerframe2 {
+    height: 360px;
+}
+
+@media (max-width: 992px) {
+
+    .full-cat-list {
+        height: 600px;
+    }
+    .mobile-navbar-zindex {
+        z-index: 20000;
+    }
+
+    .btn-light-switch {
+        display: none;
+    }
+
+    .playerframe {
+        height: 210px;
+    }
+
+    .playerframe2 {
+        height: 210px;
+    }
+    .popmatchviewshow{
+        display:none;
+    }
+}
+
+@media (min-width: 950px) {
+    .full-cat-list {
+        height: 800px;
+    }
+}
+
+.swal2-content{
+    color:#000000;
+}
