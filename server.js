@@ -24,6 +24,9 @@ cors_proxy.createServer({
     'via',
     'connect-time',
     'total-route-time',
+    'X-Final-Url',
+    'X-Frame-Options',
+    'X-Request-Url',
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
