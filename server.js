@@ -29,6 +29,11 @@ cors_proxy.createServer({
     'x-forwarded-port',
     'cdn-loop',
     'do-connecting-ip',
+    'cf-ray',
+    'cf-visitor',
+    'cf-ew-via',
+    'cf-ipcountry',
+    'cf-connecting-ip'
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
