@@ -33,7 +33,8 @@ cors_proxy.createServer({
     'cf-visitor',
     'cf-ew-via',
     'cf-ipcountry',
-    'cf-connecting-ip'
+    'cf-connecting-ip',
+    'cf-worker'
   ],
   redirectSameOrigin: true,
   httpProxyOptions: {
